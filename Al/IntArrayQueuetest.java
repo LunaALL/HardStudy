@@ -6,12 +6,12 @@ public class IntArrayQueuetest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		IntArrayQueue queue1= new IntArrayQueue(8);
+		IntArrayQueue queue1= new IntArrayQueue(4);
 		Scanner sc =new Scanner(System.in);
 		int x=0;
 		while(true) {
 			System.out.print("현재 데이터 수는 "+ queue1.insize() +" / "+ queue1.maxsize() );
-			System.out.print("\n(0)종료 (1)인큐 (2)디큐 (3)피크 (4)올프린트");
+			System.out.print("\n(0)종료 (1)인큐 (2)디큐 (3)피크 (4)올프린트 (5)서치");
 			int menu=sc.nextInt();
 			if(menu==0) {
 				break;
@@ -45,6 +45,16 @@ public class IntArrayQueuetest {
 				break;
 			case 4:
 				queue1.dump();
+				break;
+			case 5:
+				System.out.print("큐 내부에서 몇번째에 있는지 찾을 변수 입력");
+				x=sc.nextInt();
+				x=queue1.search(x);
+				if(x==0) {
+					System.out.println("못찾았습니다.");
+				}else {
+					System.out.println("큐 내부 "+x+"번째에 존재함.");
+				}
 				break;
 				
 			}
